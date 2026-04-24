@@ -1,0 +1,28 @@
+{
+    "name": "michael-orenda/ui",
+    "description": "Atomic Design UI system for Laravel (Blade + Alpine)",
+    "type": "library",
+    "license": "MIT",
+
+    "autoload": {
+        "psr-4": {
+            "MichaelOrenda\\Ui\\": "src/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelOrenda\\Ui\\UiServiceProvider"
+            ]
+        }
+    },
+
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^13.0"
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

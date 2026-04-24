@@ -168,6 +168,111 @@ Molecules combine atoms into reusable UI blocks.
 
 ---
 
+## 🔹 Organisms
+
+Organisms are full UI sections composed of atoms and molecules.
+
+---
+
+### Navbar
+
+```blade
+<x-ui::organisms.navbar>
+    <x-ui::atoms.button class="btn btn-sm btn-primary">
+        Login
+    </x-ui::atoms.button>
+</x-ui::organisms.navbar>
+```
+
+---
+
+### Stats Grid
+
+```blade
+@php
+$stats = [
+    ['label' => 'Users', 'value' => 1200],
+    ['label' => 'Revenue', 'value' => '$12,000'],
+];
+@endphp
+
+<x-ui::organisms.stats-grid :items="$stats" />
+```
+
+---
+
+### Form
+
+```blade
+<x-ui::organisms.form>
+
+    <x-ui::molecules.form-field label="Email" id="email">
+        <x-ui::atoms.input class="form-control" />
+    </x-ui::molecules.form-field>
+
+    <x-ui::organisms.form-actions>
+        <x-ui::atoms.button class="btn btn-primary">
+            Submit
+        </x-ui::atoms.button>
+    </x-ui::organisms.form-actions>
+
+</x-ui::organisms.form>
+```
+
+---
+
+### Modal
+
+```blade
+<div x-data="modal">
+    <x-ui::atoms.button class="btn btn-primary" @click="show">
+        Open Modal
+    </x-ui::atoms.button>
+
+    <x-ui::organisms.modal>
+        <p>This is a modal</p>
+    </x-ui::organisms.modal>
+</div>
+```
+
+---
+
+### Login Form
+
+```blade
+<x-ui::organisms.login-form action="/login">
+    <x-slot:footer>
+        <a href="#">Forgot password?</a>
+    </x-slot>
+</x-ui::organisms.login-form>
+```
+
+---
+
+### Register Form
+
+```blade
+<x-ui::organisms.register-form action="/register">
+    <x-slot:footer>
+        <a href="/login">Already have an account?</a>
+    </x-slot>
+</x-ui::organisms.register-form>
+```
+
+---
+
+### Forgot Password Form
+
+```blade
+<x-ui::organisms.forgot-password-form action="/forgot-password">
+    <x-slot:footer>
+        <a href="/login">Back to login</a>
+    </x-slot>
+</x-ui::organisms.forgot-password-form>
+```
+
+---
+
 ## 🧪 UI Playground (Recommended)
 
 Create routes to explore components:
